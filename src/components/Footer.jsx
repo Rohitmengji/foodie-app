@@ -8,6 +8,7 @@ export default function Footer() {
         <a href="/" className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         </a>
         <span className="text-muted text-center">RM ©  2023 <i>GoFood  </i>,  Inc</span>
+        
       </div>
     </footer>
   </div>

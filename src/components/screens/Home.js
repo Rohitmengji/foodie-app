@@ -1,3 +1,4 @@
+import Delete from "@mui/icons-material/Delete";
 import React, { useEffect, useState } from "react";
 import Card from "../Card";
 // import Carousel from '../components/Carousel'
@@ -32,7 +33,9 @@ export default function Home() {
        },
      });
      response = await response.json();
-     console.log(response[0]);
+     
+     // shows all data in log 
+    //  console.log(response[0]);
      setFoodItems(response[0]);
    };
 
@@ -58,7 +61,7 @@ export default function Home() {
                 {" "}
                 {/* justify-content-center, copy this <form> from navbar for search box */}
                 <input
-                  className="form-control me-2 w-75 bg-white text-dark"
+                  className="form-control me-2 w-75 bg-dark text-white"
                   type="search"
                   placeholder="Search in here..."
                   aria-label="Search"
@@ -68,12 +71,12 @@ export default function Home() {
                   }}
                 />
                 <button
-                  className="btn text-white bg-danger"
+                  className="btn text-white bg-danger h-25"
                   onClick={() => {
                     setSearch("");
                   }}
                 >
-                  X
+                  <Delete />
                 </button>
               </div>
             </div>

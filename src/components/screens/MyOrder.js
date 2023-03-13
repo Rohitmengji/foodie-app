@@ -1,33 +1,11 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useEffect, useState } from "react";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 
 export default function MyOrder() {
   const [orderData, setorderData] = useState({});
-
+ 
+  
   const fetchMyOrder = async () => {
     console.log(localStorage.getItem("userEmail"));
     await fetch("http://localhost:5000/api/auth/myOrderData", {
@@ -72,7 +50,8 @@ export default function MyOrder() {
                         return item.map((arrayData) => {
                           return (
                             <div>
-                              {arrayData.Order_date ? (
+                              {
+                              arrayData.Order_date ? (
                                 <div className="m-auto mt-5">
                                   {(data = arrayData.Order_date)}
                                   <hr />

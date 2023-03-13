@@ -7,6 +7,7 @@ import SignUp from "../src/components/screens/SignUp";
 import LandingPage from "./components/screens/LandingPage";
 import MyOrder from "./components/screens/MyOrder";
   import { CartProvider } from "./components/ContextReducer";
+import ContactForm from "./components/screens/ContactUs";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/signup" element={<SignUp />} />
             <Route exact path="/myorder" element={<MyOrder />} />
             <Route exact path="/landingpage" element={<LandingPage />} />
+            <Route exact path="/contactus" element={<ContactForm />} />
           </Routes>
         </div>
     </CartProvider>

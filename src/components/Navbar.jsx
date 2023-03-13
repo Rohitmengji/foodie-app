@@ -62,6 +62,16 @@ export default function Navbar() {
                 </Link>{" "}
                 {/* index.css - nav-link color white */}
               </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link fs-5 mx-3 active"
+                  aria-current="page"
+                  to="/contactus"
+                >
+                  Contact us
+                </Link>{" "}
+                {/* index.css - nav-link color white */}
+              </li>
               {localStorage.getItem("token") ? (
                 <li className="nav-item">
                   <Link
@@ -78,14 +88,15 @@ export default function Navbar() {
               )}
             </ul>
             {!localStorage.getItem("token") ? (
-              <form className="d-flex">
+              <>
                 <Link className="btn bg-white text-success mx-1 " to="/login">
                   Login
                 </Link>
+                
                 <Link className="btn bg-white text-success mx-1" to="/signup">
                   Signup
                 </Link>
-              </form>
+              </>
             ) : (
               <div>
                 <div
