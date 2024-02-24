@@ -1,13 +1,16 @@
-const mongoose = require("mongoose");
-// const mongoDbClient = require("mongodb").MongoClient
+require("dotenv").config();
 
-const mongoURI =
-  "mongodb+srv://rohitmengji:6361614017@cluster0.cyjr6kh.mongodb.net/foodiemern?retryWrites=true&w=majority"; // Customer change url to your db you created in atlas
-// mongodb://<username>:<password>@merncluster-shard-00-00.d1d4z.mongodb.net:27017,merncluster-shard-00-01.d1d4z.mongodb.net:27017,merncluster-shard-00-02.d1d4z.mongodb.net:27017/?ssl=true&replicaSet=atlas-eusy5p-shard-0&authSource=admin&retryWrites=true&w=majority
+const mongoose = require("mongoose");
+
+mongoose.set("strictQuery", true);
+
+// const mongoURI ="mongodb+srv://rohitmengji:6361614017@cluster0.cyjr6kh.mongodb.net/foodiemern?retryWrites=true&w=majority";
+const mongoURI = process.env.MONGO_URI;
+console.log("MongoURI:", mongoURI);
+
 module.exports = function (callback) {
   mongoose.connect(mongoURI, { useNewUrlParser: true }, async (err, result) => {
-    // mongoDbClient.connect(mongoURI, { useNewUrlParser: true }, async(err, result) => {
-    if (err) console.log("---" + err);
+    if (err) console.log("Error Found ---" + err);
     else {
       // var database =
       console.log("connected to mongo");
@@ -22,12 +25,6 @@ module.exports = function (callback) {
           callback(err, data, Catdata);
         });
       });
-      // listCollections({name: 'food_items'}).toArray(function (err, database) {
-      // });
-      //     module.exports.Collection = database;
-      // });
     }
   });
 };
-
-// module.exports = mongoDB
